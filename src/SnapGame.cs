@@ -24,20 +24,26 @@ namespace CardGames
 
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
-				myGame.FlipNextCard ();
+				myGame.Start ();
 			}
 			if (myGame.IsStarted)
  			{
  				if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped 
  				    (KeyCode.vk_RSHIFT)) {
  				//Todo :add sound effects
- 			
+					SwinGame.LoadSoundEffectNamed ("Fuck this shit Im out", "Fuck this shit Im out.mp3");
+					SwinGame.PlaySoundEffect ("Fuck this shit Im out");
+ 				
 				} else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT)) {
 					myGame.PlayerHit (0);
+					SwinGame.LoadSoundEffectNamed ("slap", "slap.wav");
+					SwinGame.PlaySoundEffect ("slap");
  				}
  				else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
  				{
  					myGame.PlayerHit (1);
+					SwinGame.LoadSoundEffectNamed ("slap", "slap.wav");
+					SwinGame.PlaySoundEffect ("slap");
  				}
   			}
 
